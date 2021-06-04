@@ -1,4 +1,7 @@
-# Apollo GraphQl builder
+# GraphQl builder
+
+> This is a fork of the wonderful `@ng-builder/graphql` made by Lukas Holzer <lukas.holzer@dynatrace.com>
+> This fork aims to provide more options to be more flexible to project needs.
 
 This angular builder is using the [graphql-code-generator](https://graphql-code-generator.com/) to generate apollo services for your angular application.
 
@@ -7,7 +10,7 @@ This angular builder is using the [graphql-code-generator](https://graphql-code-
 First of all you need to install the builder package.
 
 ```bash
-npm install -D @ng-builder/graphql
+npm install -D @ng-data/graphql
 ```
 
 Then you have to configure it in the `angular.json`
