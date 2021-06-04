@@ -1,8 +1,62 @@
 {
   "version": 1,
-  "projects": {},
   "cli": {
-    "defaultCollection": "@nrwl/workspace",
+    "defaultCollection": "@nrwl/angular",
     "packageManager": "pnpm"
-  }
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {}
+  },
+  "projects": {
+    "graphql": {
+      "projectType": "library",
+      "root": "libs/graphql",
+      "sourceRoot": "libs/graphql/src",
+      "prefix": "ng-data",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/graphql"],
+          "options": {
+            "project": "libs/graphql/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/graphql/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/graphql/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/graphql"],
+          "options": {
+            "jestConfig": "libs/graphql/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/graphql/src/**/*.ts",
+              "libs/graphql/src/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "graphql"
 }

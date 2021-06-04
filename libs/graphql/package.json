@@ -1,0 +1,32 @@
+{
+  "name": "@ng-data/graphql",
+  "version": "0.0.1",
+  "description": "Angular Builder for GraphQl",
+  "author": "Lukas Holzer <lukas.holzer@dynatrace.com>",
+  "homepage": "https://github.com/lukasholzer/angular-builders#readme",
+  "license": "MIT",
+  "main": "src/index.js",
+  "builders": "./builders.json",
+  "bugs": {
+    "url": "https://github.com/lukasholzer/angular-builders/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukasholzer/angular-builders.git"
+  },
+  "engines": {
+    "node": ">=12.10"
+  },
+  "dependencies": {
+    "@graphql-codegen/cli": "^1.9.1",
+    "@graphql-codegen/fragment-matcher": "^1.9.1",
+    "@graphql-codegen/introspection": "^1.9.1",
+    "@graphql-codegen/near-operation-file-preset": "^1.9.1",
+    "@graphql-codegen/plugin-helpers": "^1.9.1",
+    "@graphql-codegen/typescript": "^1.9.1",
+    "@graphql-codegen/typescript-apollo-angular": "^1.9.1",
+    "@graphql-codegen/typescript-compatibility": "^1.9.1",
+    "@graphql-codegen/typescript-operations": "^1.9.1",
+    "graphql": "^14.5.8"
+  }
+}
